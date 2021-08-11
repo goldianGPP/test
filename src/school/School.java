@@ -5,6 +5,10 @@
  */
 package school;
 
+import Model.Student;
+import Model.Subject;
+import Model.Teacher;
+import View.StudentView;
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +28,8 @@ public class School {
         Subject subject = new Subject();
         Teacher teacher = new Teacher();
         Student student = new Student();
+        
+        StudentView studentView = new StudentView();
 
         int main, Mstudent, Mteacher, Msubject;
 
@@ -77,44 +83,7 @@ public class School {
                     } while (Mstudent != 0);
                     break;
                 case 2:
-                    do {
-                        System.out.println("---student menu---");
-                        System.out.println("[1] add student's data");
-                        System.out.println("[2] show student's data");
-                        System.out.println("[3] add student's subject");
-                        System.out.println("[4] show student's subject");
-                        System.out.println("[0] back");
-                        System.out.println("input menu :");
-                        Mteacher = scanner.nextInt();
-                        switch (Mteacher) {
-                            case 1:
-                                student.addStudents(
-                                        student.addStudent(
-                                                scanner,
-                                                student.getStudents().size() + 1
-                                        )
-                                );
-                                break;
-                            case 2:
-                                student.showStudent(student.getStudents());
-                                break;
-                            case 3:
-                                student.showStudent(student.getStudents());
-                                subject.showSubjects(subject.getSubjects());
-                                System.out.println("chose student's id : ");
-                                int id = scanner.nextInt()-1;
-                                System.out.println("chose student's id : ");
-                                student.getStudents()
-                                        .get(id)
-                                        .addSubjects(subject.getSubjects()
-                                                .get(scanner.nextInt()-1));
-                                break;
-                            case 4:
-                                student.showSubject(student.getStudents());
-                                break;
-                        }
-
-                    } while (Mteacher != 0);
+                     studentView.menu(scanner,subject);
                     break;
                 case 3:
                     do {

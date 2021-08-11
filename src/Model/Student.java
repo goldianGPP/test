@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package school;
+package Model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -77,42 +77,10 @@ public class Student {
         this.students.add(student);
     }
 
-    public Student addStudent(Scanner scanner, int id) {
-        System.out.println("student id : " + id);
-        System.out.println("student name : ");
-        name = scanner.next();
-        System.out.println("student birth date : ");
-        dateBirth = scanner.next();
+    
 
-        return new Student(id, name, dateBirth);
-    }
+    
 
-    public void showStudent(List<Student> students) {
-        if (students.size() == 0) {
-            System.out.println("there are no student on the list");
-        } else {
-            System.out.println("===---STUDENTS---===");
-            for (Student student : students) {
-                System.out.println("id :" + student.getStudentID() + " | name :" + student.getName() + " | birth date :" + student.getDateBirth());
-            }
-        }
-    }
-
-    public void showSubject(List<Student> students) {
-        if (students.size() == 0) {
-            System.out.println("there are no teacher on the list");
-        } else {
-            System.out.println("===---TEACHERS---===");
-            for (Student student : students) {
-                System.out.println("id :" + student.getStudentID() + " | name :" + student.getName() + " | birth date :" + student.getDateBirth());
-                if (student.getSubjects().size() != 0) {
-                    System.out.println("     ===---SEUBJECTS---===");
-                    for (Subject subject : student.getSubjects()) {
-                        System.out.println("     id :" + subject.getSubjectID() + " | name :" + subject.getName());
-                    }
-                }
-            }
-        }
-    }
+    
 
 }
